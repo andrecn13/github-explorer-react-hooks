@@ -1,13 +1,12 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { FiChevronRight } from 'react-icons/fi';
+import { FiChevronRight, FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
 
 import logoImg from '../../assets/logo.svg';
 
 import { Title, Form, Repositories, Error } from './style';
-import Repository from '../Repository';
 
 interface Repository {
   full_name: string;
@@ -20,6 +19,7 @@ interface Repository {
 const Dashboard: React.FC = () => {
   const [newRepo, setNewRepo] = useState('');
   const [inputError, setInputError] = useState('');
+  const [loading, setLoading] = useState(false);
   const [repositories, setRepositories] = useState<Repository[]>(() => {
     const StoragedRepositories = localStorage.getItem(
       '@GithubExplorer:respositories',
@@ -42,18 +42,34 @@ const Dashboard: React.FC = () => {
   ): Promise<void> {
     event.preventDefault();
 
+    if (inputError.length > 0) {
+      setInputError('');
+    }
+
     if (!newRepo) {
       setInputError('Digite o autor/repositorio!!');
+      setLoading(false);
       return;
     }
 
     try {
+      setLoading(true);
       const { data } = await api.get<Repository>(`repos/${newRepo}`);
 
-      setRepositories([...repositories, data]);
-      setNewRepo('');
+      const findRepo = repositories.findIndex(
+        (repository) => repository.full_name === newRepo,
+      );
+
+      if (findRepo === -1) {
+        setRepositories([...repositories, data]);
+        setNewRepo('');
+      } else {
+        setInputError('Repositorio já existe!!');
+      }
     } catch (error) {
       setInputError('Erro ao buscar repositório, tente novamente!');
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -68,7 +84,7 @@ const Dashboard: React.FC = () => {
           value={newRepo}
           onChange={(e) => setNewRepo(e.target.value)}
         />
-        <button type="submit">Buscar</button>
+        <button type="submit"> {!loading ? 'Buscar' : 'Buscando...'} </button>
       </Form>
 
       {inputError && <Error>{inputError}</Error>}

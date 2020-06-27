@@ -2,8 +2,9 @@
 
 <h3 align="center">
   GitHub explorer app using React and Hooks
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/df14b947-a953-408e-995b-100e7aeafd2f/deploy-status)](https://app.netlify.com/sites/githubexplorer-app/deploys)
 </h3>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/df14b947-a953-408e-995b-100e7aeafd2f/deploy-status)](https://app.netlify.com/sites/githubexplorer-app/deploys)
 
 <br>
 

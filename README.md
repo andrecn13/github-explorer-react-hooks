@@ -1,6 +1,6 @@
 ![github epxlorer](https://media.giphy.com/media/Vg0VjXGAtmIChVjDqZ/giphy.gif)
 
-<h3 align="center">
+<h3 align="left">
   GitHub explorer app using React and Hooks
 </h3>
 

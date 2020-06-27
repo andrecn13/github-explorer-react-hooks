@@ -1,5 +1,5 @@
 <p align="center">
-  ![GitHub Explorer]([https://media.giphy.com/media/Vg0VjXGAtmIChVjDqZ/giphy.gif](https://media.giphy.com/media/Vg0VjXGAtmIChVjDqZ/giphy.gif))
+  ![Alt Text]([https://media.giphy.com/media/Vg0VjXGAtmIChVjDqZ/giphy.gif](https://media.giphy.com/media/Vg0VjXGAtmIChVjDqZ/giphy.gif))
 </p>
 
 <h3 align="center">
@@ -8,7 +8,8 @@
 
 <br>
 
-<div align="center">
+<div align="left">
+
 
 ## Overview
 
@@ -18,20 +19,20 @@ GitHub Explorer is a project to search to github repositories using github API.
 
 ## Features
 
-- Search by user/repository
-- Add repository to LocalStorage
-- Detail repository
-- List repository issues
+ - Search by user/repository
+ - Add repository to LocalStorage
+ - Detail repository
+ - List repository issues
 
 ## Tech Stack
 
-- Typescript
-- React
-- Hooks
-- GitHub Api
-- Axios
-- Styled Components
-- Polished
+ - Typescript
+ - React
+ - Hooks
+ - GitHub Api
+ - Axios
+ - Styled Components
+ - Polished
 
 ## Install
 
@@ -40,3 +41,5 @@ GitHub Explorer is a project to search to github repositories using github API.
 ## Run
 
     yarn start
+
+</div>

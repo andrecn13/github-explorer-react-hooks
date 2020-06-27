@@ -1,4 +1,4 @@
-![Alt Text]([https://media.giphy.com/media/Vg0VjXGAtmIChVjDqZ/giphy.gif])
+![github epxlorer](https://media.giphy.com/media/Vg0VjXGAtmIChVjDqZ/giphy.gif)
 
 <h3 align="center">
   GitHub explorer app using React and Hooks
